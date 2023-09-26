@@ -12,7 +12,12 @@ export default function MemoEditScreen() {
       <View style={styles.inputContainer}>
         <TextInput value="買い物リスト" multiline style={styles.input} />
       </View>
-      <CircleButton name="check" />
+      <CircleButton
+        name="check"
+        onPress={() => {
+          Alert.alert("Pressed!");
+        }}
+      />
     </KeyboardSafeView>
   );
 }
