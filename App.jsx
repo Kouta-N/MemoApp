@@ -1,4 +1,7 @@
 /* eslint-disable */
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet, Text, View } from "react-native";
 
 import MemoListScreen from "./src/screens/MemoListScreen";
@@ -10,11 +13,15 @@ import SignUpScreen from "./src/screens/SignUpScreen";
 
 import AppBar from "./src/components/AppBar";
 
+const Stack = createStackNavigator();
+
 export default function App() {
-  // return <MemoListScreen />;
-  // return <MemoDetailScreen />;
-  // return <MemoEditScreen />;
-  // return <MemoCreateScreen />;
-  // return <LoginScreen />;
-  return <SignUpScreen />;
+  return (
+    // <MemoListScreen />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="MemoList" component={MemoListScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
